@@ -6,6 +6,10 @@ FINALPACKAGE = 1
 CODESIGN_IPA = 0
 PACKAGE_VERSION = X.X.X-X.X
 
+# Fix install issues with Alderis
+export Alderis_XCODEOPTS = LD_DYLIB_INSTALL_NAME=@rpath/Alderis.framework/Alderis
+export Alderis_XCODEFLAGS = DYLIB_INSTALL_NAME_BASE=/Library/Frameworks BUILD_LIBRARY_FOR_DISTRIBUTION=YES ARCHS="$(ARCHS)"
+
 TWEAK_NAME = YTLitePlus
 DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
